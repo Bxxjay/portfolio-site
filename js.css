@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(22, 17, 36);
+}
+
+.main{
+    border: 30px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    float: left;
+    width: 20%;
+    overflow: auto;
+}
+
+.mainitems{
+    background-image: url(/images/scream.jpg);
+    padding: 10px;
+    margin-top: 8px;
+    border-bottom: 2px solid rgb(22, 17, 36);
+    display: block;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.sub{
+    float: left;
+    width: 60%;
+    padding: 20px;
+    overflow: auto;
+    background-color: burlywood;
+}
+
+.sharp{
+    float: left;
+    width: 20%;
+    padding: 10px 10px;
+    margin-top: 0;
+    background-color: darkslategray;
+}
+
+@media only screen and (max-width:800px){
+    .main{
+        width: 100%;
+        padding: 0%;
+    }
+    .sub{
+        width:  100%;
+        padding: 0%;
+    }
+    .sharp{
+        width: 100%;
+        padding: 0%;
+    }
+    }
+
+    @media only screen and (max-width:500px){
+        .main.sub.sharp{
+            width: 100%;
+        }
+    }
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  margin-top: -10px;
+}
+
+li {
+  float: left;
+}
+
+li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  width: 100%;
+}
+
+li > a:hover {
+  background-color: #111111;
+}
+
+li > a:active{
+    background-color: pink;
+}
+
+.mainitems:hover{
+    display: inline-block;
+    color: black;
+    text-align: right;
+    text-decoration: none;
+    padding: 10px;
+    background-color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sub > p{
+    margin: 20px;
+    padding: 10px;
+}
+
+li > a:visited{
+    background-color: darkgray;
+}

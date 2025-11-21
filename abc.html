@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+nav {
+  background: #222;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;              /* puts EVERYTHING on ONE horizontal row */
+  align-items: center;         /* vertically centers items */
+  gap: 20px;                   /* space between items */
+  margin: 0;
+  padding: 0;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+nav li a:hover {
+  background: #444;
+}
+
+nav input[type="search"] {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+@media only screen and (max-width: 800px) {
+}
+    
+        </style>
+    </head>
+    <body>
+         <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="xyz.html">FREESTYLE</a></li>
+                <li><a href="js.html">STYLE</a></li>
+                <li><a href="fake.html">ZONE</a></li>
+                <li><a href="#">AWAY</a></li>
+                <li><a href="#">DEVIL</a></li>
+                <li><a href="#">KARAOKE</a></li>
+                <li>
+                    <form action="" class="e">
+                        <label for="search"></label>
+                        <input type="search" id="search" name="search" placeholder="Search Here">
+                    </form>
+                </li>
+            </ul>
+        </nav>  
+    </body>
+</html>

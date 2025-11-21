@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Plane Ticket</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#f3f4f6; padding:40px; }
+    .ticket {
+      width: 900px;
+      max-width: 100%;
+      margin: 0 auto;
+      background: linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(10,10,20,0.08);
+      position: relative;
+      overflow: hidden;
+      border: 2px dashed rgba(0,0,0,0.06);
+    }
+    /* diagonal SAMPLE watermark */
+    .ticket::before {
+      content: "FOR AUTHORIZED USE ONLY";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%) rotate(-30deg);
+      font-size: 48px;
+      letter-spacing: 6px;
+      color: rgba(220,20,60,0.10);
+      font-weight: 800;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .top {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 28px;
+      border-bottom: 1px solid #eef0f4;
+    }
+    .airline {
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .logo {
+      width:72px; height:44px; border-radius:6px;
+      background: linear-gradient(135deg,#1a73e8,#0f9d58);
+      display:flex; align-items:center; justify-content:center;
+      color:white; font-weight:700; font-size:18px;
+    }
+    .airline-name { font-weight:700; font-size:20px; letter-spacing:0.2px; }
+    .route { text-align:right; color:#374151; font-weight:600; }
+    .route .fromto { font-size:18px; display:block; }
+    .route .date { font-size:13px; color:#6b7280; }
+
+    .main { display:flex; gap:24px; padding:20px 28px; }
+    .col { flex:1; min-width:220px; }
+    .field { margin-bottom:14px; }
+    .label { font-size:12px; color:#6b7280; text-transform:uppercase; letter-spacing:1px; }
+    .value { font-size:18px; font-weight:700; color:#111827; }
+
+    .flight-info { background:#f8fafc; padding:18px; border-radius:8px; }
+    .small { font-size:13px; color:#374151; font-weight:600; }
+
+    .right { width:260px; padding:20px; border-left:1px dashed #e6e9ee; }
+    .barcode {
+      margin-top:18px;
+      height:72px;
+      background: repeating-linear-gradient(90deg, #000 0 4px, #fff 4px 8px);
+      border-radius:6px;
+    }
+
+    .note { padding:18px 28px 28px; color:#6b7280; font-size:13px; border-top:1px solid #eef0f4; }
+    .btn { display:inline-block; margin-top:10px; padding:10px 14px; border-radius:6px; background:#111827; color:white; font-weight:700; text-decoration:none; font-size:13px; }
+
+    /* responsive */
+    @media (max-width:760px){
+      .main { flex-direction:column; }
+      .right { width:auto; border-left:none; border-top:1px dashed #e6e9ee; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket" role="article" aria-label="FOR AUTHORIZED USE ONLY">
+    <div class="top">
+      <div class="airline">
+        <div class="logo">AP</div>
+        <div>
+          <div class="airline-name">AirPeace</div>
+          <div style="font-size:13px; color:#6b7280">Domestic Ticket </div>
+        </div>
+      </div>
+      <div class="route">
+        <span class="fromto">Lagos (LOS) → Anambra (Awka)</span>
+        <span class="date">Departure: 24 Sep 2025 · 09:45</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="col">
+        <div class="field">
+          <div class="label">Passenger</div>
+          <div class="value">JACOBSON BOLAJI</div>
+        </div>
+
+        <div class="field flight-info">
+          <div class="small">Flight</div>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:6px;">
+            <div>
+              <div class="label">Flight No.</div>
+              <div class="value">P4 723</div>
+            </div>
+            <div>
+              <div class="label">Class</div>
+              <div class="value">Economy</div>
+            </div>
+            <div>
+              <div class="label">Seat</div>
+              <div class="value">12A</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;">
+          <div style="flex:1;">
+            <div class="label">Boarding</div>
+            <div class="value">09:05</div>
+          </div>
+          <div style="flex:1;">
+            <div class="label">Gate</div>
+            <div class="value">A02</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="label">Booking reference</div>
+          <div class="value">PNR723</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div>
+          <div class="label">From</div>
+          <div class="value">Murtala Muhammed Airport, Lagos</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="label">To</div>
+          <div class="value">Anambra International Airport (Awka)</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="label">Ticket Type</div>
+          <div class="value">E-Ticket</div>
+        </div>
+
+        <div class="barcode" aria-hidden="true"></div>
+
+        <div style="margin-top:10px; font-size:12px; color:#9ca3af;"> It is <strong>VALID</strong> for travel.</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>IMPORTANT:</strong> THIS DOCUMENT IS VALID FOR TRAVEL ONLY
+      <div style="margin-top:6px"><a class="btn" href="#" onclick="alert('PRINT'); return false;">PRINT</a></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fully Collapsible Sidebar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    /* Sidebar */
+    nav {
+      background: #222;
+      width: 200px;
+      height: 100vh;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      top: 0;
+      transition: width 0.3s;
+      overflow: hidden;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background: #444;
+    }
+
+    /* Collapsed sidebar */
+    nav.collapsed {
+      width: 0;
+      padding-top: 0;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+      flex: 1;
+      transition: margin-left 0.3s;
+    }
+
+    nav.collapsed + .content {
+      margin-left: 0;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+      position: fixed;
+      top: 5px;
+      left: 210px;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: left 0.3s;
+    }
+
+    nav.collapsed + .content .toggle-btn {
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="sidebar">
+    <a href="#home">🏠 Home</a>
+    <a href="#about">ℹ️ About</a>
+    <a href="#services">🛠 Services</a>
+    <a href="#contact">📞 Contact</a>
+  </nav>
+
+  <div class="content">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <h1>Welcome</h1>
+    <p>This is the page content beside the fully collapsible sidebar.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+  </script>
+
+</body>
+</html>

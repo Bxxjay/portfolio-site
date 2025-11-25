@@ -13,6 +13,8 @@ body {
     background-color: grey;
     background-repeat: repeat-x;
     background-attachment: scroll;
+    margin: 0;
+    padding: 0;
 }
 .a {
     border: 1px solid black;
@@ -36,6 +38,7 @@ nav ul {
 }
 
 li a {
+    display: block;
     color: white;
     padding: 15px;
     text-decoration: none;
@@ -70,6 +73,10 @@ h2.c {
 
 .b {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px;
+}
+.d{
+    margin: 10px;
 }
 
 .f{
@@ -156,7 +163,7 @@ input[type="search"]{
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: white;
-  background-image: url('My Websites/My Images/searchicon.png');
+  background-image: url('searchicon.png');
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
@@ -164,6 +171,68 @@ input[type="search"]{
 }
 input[type="search"]:focus {
     width: 100%;
+}
+@media only screen and (max-width:600px){
+     .a , nav ul , li a {
+        display: block;
+        flex: none;
+    }
+    .f {
+        display: block;
+        width: 100%;
+        flex: none;
+    }
+}
+.formal{
+    max-width: 600px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin: 10px 10px;
+    border-radius: 10px;
+    font-variant: small-caps;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+
+input[type="text"]{
+    max-width: 45%;
+    background-color: coral;
+    color: azure;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 10px;
+    border: 4px outset black;
+}
+
+input[type="password"]{
+    max-width: 45%;
+    background-color: coral;
+    color: azure;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 10px;
+    border: 4px outset black;
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: green;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    border: none;
 }
         </style>
     </head>
@@ -194,7 +263,7 @@ input[type="search"]:focus {
                 <li>
                     <form action="" class="e" >
                         <label for="search"></label>
-                        <input type="search" id="search" name="search" placeholder="Search Here" style="background-image: url(`'My Websites/My Images/searchicon.png');">
+                        <input type="search" id="search" name="search" placeholder="Search Here">
                     </form>
                 </li>
             </ul>
@@ -246,6 +315,15 @@ With time, these little systems build the foundation for bigger achievements —
                 <img src="/My Websites/My Images/download (1).jpg" alt="nature" width="250" height="250">
                 <div class="tix">A beautiful View</div>
             </div>
+        </div>
+        <div class="formal">
+            <form action="" method="post" autocomplete="on" autocorrect="on" enctype="multipart/form-data" novalidate>
+                <label for="firstname">Username</label>
+                <input type="text" id="firstname" name="firstname" ><br><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" min="6" max="22"><br><br>
+                <input type="submit">
+            </form>
         </div>
     </body>
 </html>

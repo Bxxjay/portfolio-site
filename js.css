@@ -42,15 +42,15 @@ body {
 @media only screen and (max-width:800px){
     .main{
         width: 100%;
-        padding: 0%;
+        padding: 0;
     }
     .sub{
         width:  100%;
-        padding: 0%;
+        padding: 0;
     }
     .sharp{
         width: 100%;
-        padding: 0%;
+        padding: 0;
     }
     }
 

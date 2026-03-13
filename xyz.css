@@ -35,6 +35,22 @@ tr:nth-child(even) {
 th:nth-child(even),td:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: blanchedalmond;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 9px #999;
+}
+.btn:active {
+  background-color: blanchedalmond;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .menu, .main, .right {

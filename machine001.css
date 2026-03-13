@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -39,7 +39,7 @@ header ul {
     display: flex;
     flex-direction: column;
     background-color: black;
-    align-items: flex-end;
+    align-items: center;
 }
 
 header ul li a {
@@ -56,6 +56,7 @@ header ul li a:hover {
     color: white;
     cursor: pointer;
     transition: transform 1s ease-in-out;
+    width: 100%;
 }
 
 header img {
@@ -66,9 +67,9 @@ header img {
 .menu {
     width: 100%;
     padding: 5px;
-    border-radius: 5px;
     background-color: grey;
     text-align: center;
+    margin: 0;
 }
 
 .menu a {
@@ -117,6 +118,9 @@ header img {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .page ul {
@@ -124,7 +128,7 @@ header img {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -151,39 +155,135 @@ header img {
     margin-bottom: 10px;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: default;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto 1fr auto auto auto;
+    gap: 1rem;
+}  
+  .menu {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .page {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .ads {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+
+  .footer {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+
+  header {
+        flex-direction: row;
+    }
+
+    header ul {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        max-width: 100%;
+    }
+
+    header ul li a {
+    padding: 5px 20px;
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transform: scale(1.2);
+}
+
+    header ul li a:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+}
+    .page ul {
+    justify-content: center;
+    align-items: center;
+}
+} 
+
 @media only screen and (min-width:1024px) {
     .grid-container {
         grid-template-columns: repeat(12, [col-start] 1fr);
         gap: 1rem;
         grid-template-rows: 1fr auto auto;
-    }
+        margin-left: 100px; /* same as menu width + some padding */
+        padding: 10px;
+}
     .menu {
         grid-column: col-start 1 / span 2;
         grid-row: 1 / -1;
-    }
+        height: 100vh;
+        margin-left: -109px;
+        margin-top: -10px;
+        margin-bottom: -20px;
+        padding: 5px;
+        text-align: center;
+        position: sticky; 
+        top: 0;   
+        text-align: left; 
+}
+
     .content {
-        grid-column: col-start 3 / span 8;
+        grid-column: col-start 3 / span 7;
         grid-row: 1;
     }
     .ads {
-        grid-column: col-start 11 / span 2;
+        grid-column: col-start 10 / span 3;
         grid-row: 1 / span 2;
     }
     .page {
-        grid-column: col-start 3 / span 8;
+        grid-column: col-start 3 / span 7;
         grid-row: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
     }
     .footer {
         grid-column: col-start 3 / span 10;
         grid-row: 3;
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: -20px;
     }
     header {
+        display: flex;
         flex-direction: row;
+        position: sticky;
+        top: 0;
+       /* box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        z-index: 1000;
     }
     header ul {
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-end;
+        display: flex;
     }
     header ul li a {
     padding: 5px 20px;

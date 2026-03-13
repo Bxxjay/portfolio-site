@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="anger.css">
+    <link rel="shortcut icon" href="My Images/bomb.ico.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floaters</title>
+</head>
+<body>
+    <button id="display">&#127769;</button>
+    <div id="grid-container">
+        <form action="" id="signForm" class="signForm">
+            <div class="field">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <p id="error-message1" class="error-message"></p>
+            </div>
+            <div class="field">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email">
+                <p id="error-message2" class="error-message"></p>
+            </div>
+            <div class="field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <p id="error-message3" class="error-message"></p>
+                    <p id="passwordStrength" class="password-strength"></p>
+            </div>
+            <div class="field">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <p id="error-message4" class="error-message"></p>
+            </div>
+            <button type="submit" id="submit">Sign Up</button>
+            <p id="result" class="result"></p>
+        </form>
+    </div>
+    <script src="anger.js" defer></script>
+</body>
+</html>

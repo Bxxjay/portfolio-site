@@ -1,0 +1,205 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*background-color: #f0f0f0;*/
+    background-image: url(imgi_5_photo-1596550782892-01e5f0229ce7.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 900px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: transparent;
+    /*background-color: rgba(255, 255, 255, 0.1);*/
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.header img {
+    width: 30px;
+    height: auto;
+}
+
+.header ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    transition: border-bottom 0.3s ease,color 0.3s ease;
+}
+
+.header ul li a:hover {
+    color: black;
+}
+
+.header .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    min-width: 80px;
+}
+
+.header .dropdown-menu  a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.header .dropdown-menu a:hover {
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.header ul li a::before,.header ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.header ul li a::before {
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.header ul li a::after {
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.header ul li a:hover::before, .header ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.login-menu {
+    width: 420px;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.login-menu h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.login-menu .input {
+    margin: 10px 0;
+    width: 100%;
+    margin: 30px 0;
+    height: 50px;
+}
+
+.login-menu .input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: none;
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 10px;
+}
+
+.login-menu.input input::placeholder {
+    color:white;
+    font-weight: 600;
+}
+
+.login-menu .remember {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: -15px 0 15px;
+}
+
+.login-menu .remember label input {
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.login-menu .remember a {
+    text-decoration: none;
+    color: white;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.login-menu .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-menu .register-link {
+    text-align: center;
+    margin: 20px 0 15px;
+    font-size: 14px;
+}
+
+.login-menu .register-link p a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.login-menu .register-link p a:hover {
+    text-decoration: underline;
+}

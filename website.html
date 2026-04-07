@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATM Simulator</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#1a1a1a;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.atm{
+    background:black;
+    color:white;
+    padding:40px;
+    width:350px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.hidden{
+    display:none;
+}
+
+button{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+    cursor:pointer;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+</style>
+
+</head>
+<body>
+
+<div class="atm">
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+    <h2>Enter PIN</h2>
+    <input type="password" id="pinInput" placeholder="Enter PIN">
+    <button id="loginBtn">Enter</button>
+    <p id="error"></p>
+</div>
+
+<!-- MENU SCREEN -->
+<div id="menuScreen" class="hidden">
+    <h2>ATM Menu</h2>
+    <button id="checkBalance">Check Balance</button>
+    <button id="depositBtn">Deposit</button>
+    <button id="withdrawBtn">Withdraw</button>
+</div>
+
+<!-- TRANSACTION SCREEN -->
+<div id="transactionScreen" class="hidden">
+    <h2 id="transactionTitle"></h2>
+    <input type="number" id="amountInput" placeholder="Enter amount">
+    <button id="confirmBtn">Confirm</button>
+</div>
+
+</div>
+
+<script>
+
+let correctPin = "1234";
+
+let balance = localStorage.getItem("balance")
+    ? Number(localStorage.getItem("balance"))
+    : 1000;
+
+let currentAction = "";
+
+let loginBtn = document.getElementById("loginBtn");
+let pinInput = document.getElementById("pinInput");
+let loginScreen = document.getElementById("loginScreen");
+let menuScreen = document.getElementById("menuScreen");
+let error = document.getElementById("error");
+
+let checkBalance = document.getElementById("checkBalance");
+let depositBtn = document.getElementById("depositBtn");
+let withdrawBtn = document.getElementById("withdrawBtn");
+
+let transactionScreen = document.getElementById("transactionScreen");
+let transactionTitle = document.getElementById("transactionTitle");
+let amountInput = document.getElementById("amountInput");
+let confirmBtn = document.getElementById("confirmBtn");
+
+loginBtn.addEventListener("click", function(){
+
+    if(pinInput.value === correctPin){
+        loginScreen.classList.add("hidden");
+        menuScreen.classList.remove("hidden");
+        error.textContent = "";
+    } else {
+        error.textContent = "Incorrect PIN";
+    }
+
+});
+
+checkBalance.addEventListener("click", function(){
+    alert("Your balance is $" + balance);
+});
+
+depositBtn.addEventListener("click", function(){
+    currentAction = "deposit";
+    transactionTitle.textContent = "Deposit Money";
+    menuScreen.classList.add("hidden");
+    transactionScreen.classList.remove("hidden");
+});
+
+withdrawBtn.addEventListener("click", function(){
+    currentAction = "withdraw";
+    transactionTitle.textContent = "Withdraw Money";
+    menuScreen.classList.add("hidden");
+    transactionScreen.classList.remove("hidden");
+});
+
+confirmBtn.addEventListener("click", function(){
+
+    let amount = Number(amountInput.value);
+
+    if(amount <= 0){
+        alert("Enter a valid amount");
+        return;
+    }
+
+    if(currentAction === "deposit"){
+        balance += amount;
+        alert("Deposit successful");
+    }
+
+    if(currentAction === "withdraw"){
+
+        if(amount > balance){
+            alert("Insufficient funds");
+            return;
+        }
+
+        balance -= amount;
+        alert("Withdrawal successful");
+    }
+
+    localStorage.setItem("balance", balance);
+
+    amountInput.value = "";
+
+    transactionScreen.classList.add("hidden");
+    menuScreen.classList.remove("hidden");
+
+});
+
+</script>
+
+</body>
+</html>

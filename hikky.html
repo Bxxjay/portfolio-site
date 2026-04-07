@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Update Example</title>
+</head>
+<body>
+
+<button id="updateBtn">Update</button>
+
+<div id="editSection" style="display:none;">
+    <input type="number" id="inputField" placeholder="Enter number">
+    <button id="saveBtn">Save</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+let updateBtn = document.getElementById("updateBtn");
+let editSection = document.getElementById("editSection");
+let saveBtn = document.getElementById("saveBtn");
+let inputField = document.getElementById("inputField");
+let result = document.getElementById("result");
+
+// CLICK UPDATE → show input + save
+updateBtn.addEventListener("click", function(){
+    updateBtn.style.display = "none";
+    editSection.style.display = "block";
+});
+
+// CLICK SAVE → show result + go back
+saveBtn.addEventListener("click", function(){
+
+    let value = inputField.value;
+
+    if(value === ""){
+        alert("Please enter a number");
+        return;
+    }
+
+    result.textContent = value;
+
+    // reset UI
+    inputField.value = "";
+    editSection.style.display = "none";
+    updateBtn.style.display = "block";
+});
+</script>
+
+</body>
+</html>

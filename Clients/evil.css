@@ -19,6 +19,8 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    border: none;
+    background-color: white;
 }
 
 #logo img {
@@ -91,7 +93,7 @@ nav ul li a:hover::after {
     display: grid;
     grid-template-columns: repeat(12,[col-start]1fr);
     gap: 20px;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
 }
 
 #home {
@@ -102,8 +104,8 @@ nav ul li a:hover::after {
 }
 
 #home img {
-    width: 100%;
-    height: 100vh;
+    max-width: 100%;
+    height: auto;
     object-fit: cover; 
 }
 
@@ -159,6 +161,7 @@ nav ul li a:hover::after {
 #shop-filler {
     display: grid;
     grid-template-columns:repeat(4,1fr) ;
+    grid-template-rows: auto auto auto;
     gap: 40px;
     background-color: white;
     padding: 50px 20px;
@@ -167,7 +170,7 @@ nav ul li a:hover::after {
 
 #shop h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-variant: small-caps;
 }
 
@@ -175,7 +178,6 @@ nav ul li a:hover::after {
     position: relative;
     box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
     border-radius: 6px;
-    background-color: red;
 }
 
 .sneaks .quantity-controls{
@@ -185,14 +187,14 @@ nav ul li a:hover::after {
     align-items: center;
     position: absolute;
     color: white;
-    bottom: 60px; 
+    bottom: 100px; 
     right: 0;
     background-color: white;
     padding: 10px;
     border-radius: 6px;
 }
 
-.sneaks .quantity-controls #add, .sneaks .quantity-controls #subtract{
+.sneaks .quantity-controls .add, .sneaks .quantity-controls .subtract{
     padding: 5px;
     background-color: red;
     border: none;
@@ -203,12 +205,12 @@ nav ul li a:hover::after {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.sneaks .quantity-controls #add:hover, .sneaks .quantity-controls #subtract:hover {
+.sneaks .quantity-controls .add:hover, .sneaks .quantity-controls .subtract:hover {
     background-color: darkred;
     transform: scale(1.2);
 }
 
- .sneaks .quantity-controls #quantity {
+ .sneaks .quantity-controls .quantity {
     padding: 5px;
     background-color: white;
     color: black;
@@ -218,7 +220,7 @@ nav ul li a:hover::after {
     text-align: center;
  }
 
- #price {
+ .price {
     position: absolute;
     top: 0;
     left: 0;
@@ -228,17 +230,401 @@ nav ul li a:hover::after {
     font-weight: 500;
  }
 
- .sneaks #buy {
+ .sneaks .buy {
     padding: 20px;
-    background-color: red;
     color: white;
     border: none;
     border-radius: 15px;
     width: 100%;
     transition: all 0.3s ease;
+    background-color: red;
+    font-family: inherit;
  }
 
-.sneaks #buy:hover {
+.sneaks .buy:hover {
     background-color: darkred;
-    transform: scale(1.2);
+    transform: scale(1.08);
  }
+
+ #about {
+    position: relative;
+    grid-column: 1 / span 12;
+    grid-row: 3;
+ }
+
+ #about img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+ }
+
+ #about .about-stuffs {
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    width: 300px;
+    font-weight: 900;
+    font-size: 30px;
+ }
+
+ #about .about-mission {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    font-size: 27px;
+    font-weight: 800;
+ }
+
+ .naming {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 10px;
+    font-weight: 700;
+    font-variant: small-caps;
+ }
+
+ #footer {
+    grid-column: 1 / span 12;
+    grid-row: 4;
+    background-color: black;
+    color: white;
+    height: 50px;
+ }
+
+ .cart{
+    position: relative;
+ }
+
+ .heed {
+    position: absolute;
+    top: -9px;
+    right: 0;
+    padding: 2px;
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+ }
+
+ .cart img{
+    height: 30px;
+    width: 30px;
+ }
+
+ .fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problem {
+    color: green;
+    display: none;
+}
+
+
+ @media only screen and (max-width:768px){
+    .nav-links {
+    display: none;
+    flex-direction: row;
+  }
+
+  .nav-links a {
+    border-right: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  #shop-filler{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto auto auto auto;
+  }
+  #home img{
+    width: 760px;
+    height: auto;
+    object-fit: cover;
+  }
+  .hero{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+  #about .about-stuffs{
+    width: 200px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  #about .about-mission{
+    width: 120px;
+    font-size: 18px;
+  }
+  .sneaks .quantity-controls{
+    right: 0;
+    bottom: 130px;
+  }
+  .sneaks .buy{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 800;
+  }
+ } 
+
+ @media only screen and (min-width: 601px) and (max-width: 768px) {
+    #shop-filler {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        left: 40%;
+        font-size: 22px;
+    }
+}
+
+/* Large phones (481px - 600px) */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+    #shop-filler {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .hero {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    #about .about-stuffs {
+        font-size: 18px;
+        width: 220px;
+    }
+
+    #about .about-mission {
+        font-size: 16px;
+        width: 150px;
+    }
+}
+
+/* Medium phones (376px - 480px) */
+/*@media only screen and (min-width: 376px) and (max-width: 480px) {
+    #shop-filler {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 20px 10px;
+    }
+
+    #shop #shop-filler .sneaks img {
+        height: 180px;
+    }
+
+    .hero {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    #about .about-stuffs {
+        font-size: 16px;
+        width: 190px;
+        bottom: 30px;
+    }
+
+    #about .about-mission {
+        font-size: 14px;
+        width: 140px;
+    }
+}*/
+
+/* Mobile phones */
+@media only screen and (max-width: 480px) {
+    #home {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#home img {
+    height: 50vh;
+    width: 100%;
+}
+
+.hero {
+    position: static;
+    transform: none;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+    /* ABOUT */
+  #about {
+    position: relative;
+    height: 60vh;
+}
+
+#about img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about .about-stuffs {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    font-size: 13px;
+    padding: 8px;
+    background-color: transparent;
+    color: black;
+    z-index: 1;
+}
+
+#about .about-mission {
+    position: absolute;
+    top: 90%;
+    right: 10px;
+    width: 45%;
+    font-size: 13px;
+    padding: 8px;
+    background-color: transparent;
+    color: black;
+    z-index: 1;
+    transform: translateY(-90%);
+}
+}
+
+/* Small phones (321px - 375px) */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+    #shop-filler {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px 10px;
+    }
+
+    .hero {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        font-size: 0.78rem;
+        margin-bottom: 12px;
+    }
+
+    #about .about-stuffs {
+        font-size: 15px;
+        width: 170px;
+    }
+
+    #about .about-mission {
+        font-size: 13px;
+        width: 130px;
+    }
+}
+
+/* Extra small phones (max-width: 320px) */
+@media only screen and (max-width: 320px) {
+    #shop-filler {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px 8px;
+    }
+
+    .hero {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 0.72rem;
+        margin-bottom: 10px;
+    }
+
+    #about .about-stuffs {
+        font-size: 13px;
+        width: 150px;
+        bottom: 20px;
+    }
+
+    #about .about-mission {
+        font-size: 12px;
+        width: 115px;
+    }
+}
+
+/* Landscape - phones */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    #home img {
+        height: 100vh;
+    }
+
+    #shop-filler {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        top: 50%;
+    }
+}

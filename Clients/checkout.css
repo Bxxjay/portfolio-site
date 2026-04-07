@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    background-color: white;
+    color: black;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    border: none;
+    background-color: white;
+}
+
+#logo img {
+    width: 30px;
+    height: 30px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  flex-direction: row;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease,transform 0.3 ease;
+    border-right: 1px solid black;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-variant: small-caps;
+    color: black;
+}
+
+nav ul li:last-child a {
+    border-right: none;
+}
+
+nav ul li a:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transition: transform 0.3s ease;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+ .cart{
+    position: relative;
+    display: none;
+ }
+
+ .heed {
+    position: absolute;
+    top: -9px;
+    right: 0;
+    padding: 2px;
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+ }
+
+ .cart img{
+    height: 30px;
+    width: 30px;
+ }
+
+ .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 82px;
+    font-weight: 800;
+    font-size: 20px;
+ }
+ .spirit {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(12,[col-start]1fr);
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+ }
+
+ .texts {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+
+ #main {
+    grid-column: 1 / span 9;
+    grid-row: 2;
+ }
+
+ .random {
+    border: 1px solid gray;
+    border-radius: 1px;
+ }
+
+ .main-sub {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    gap: 40px;
+ }
+
+ .items img {
+    max-width: 160px;
+    height: auto;
+ }
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* hide default radio */
+.option input {
+  display: none;
+}
+
+/* custom radio */
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 4px;
+}
+
+/* checked state */
+.option input:checked + .custom-radio {
+  border-color: blue;
+}
+
+.option input:checked + .custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.date {
+  color: green;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pricedollars {
+  margin: 2px 0 0;
+  color: gray;
+}
+
+.pricefree {
+  color: gray;
+}
+
+
+.total-orders {
+    grid-column: 10 / span 13;
+    grid-row: auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.sect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.red {
+  color: red;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.fav {
+  font-family: 'Caveat',cursive;
+  color: black;
+  background-color: darkolivegreen;
+  border: none;
+  padding: 15px 10px;
+  width: 90%;
+  border-radius: 5px;
+  margin-top: 45px;
+  margin-left: 18px;
+  font-size: 20px;
+  transition: all 1s ease-in;
+}
+
+.fav:hover {
+  background-color: black;
+  color: darkolivegreen;
+}
+
+.date-details h2{
+  padding-left: 30px;
+}

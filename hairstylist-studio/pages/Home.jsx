@@ -1,0 +1,52 @@
+import { useState, useEffect } from "react";
+import Navbar from "../src/assets/components/Navbar";
+import BackToTop from "../src/assets/components/Backtotop";
+import CookieConsent from "../src/assets/components/Cookieconsent";
+import Example from "../src/assets/components/Stats";
+import Footer from "../src/assets/components/Footer";
+import CarouselSection from "../src/assets/components/PastServices";
+import About from "../src/assets/components/About";
+import Products from "../src/assets/components/Services";
+import Page from "../src/assets/components/Page";
+import FAQSection from "../src/assets/components/FAQ";
+import Reviews from "../src/assets/components/Reviews";
+
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(true);
+  const [selectedService, setSelectedService] = useState(null);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") setDarkMode(false);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  return (
+    <>
+      <div id="home">
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      </div>
+      <Example darkMode={darkMode} />
+      <Reviews darkMode={darkMode} />
+      <div id="about">
+        <About darkMode={darkMode} />
+      </div>
+      <div id="services">
+        <Products darkMode={darkMode} onSelectService={setSelectedService} />
+      </div>
+      <div id="pastservices">
+        <CarouselSection darkMode={darkMode} />
+      </div>
+      <div id="page">
+        <Page darkMode={darkMode} selectedService={selectedService} />
+      </div>
+      <BackToTop />
+      <CookieConsent />
+      <FAQSection darkMode={darkMode} />
+      <Footer />
+    </>
+  );
+}

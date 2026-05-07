@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imgi_460_14633026.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass House</title>
-</head>
-<body>
-    <header class="header">
-        <img src="imgi_460_14633026.png" alt="Mountain">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class="dropdown">
-                <a href="#">Portfolio</a>
-                <div class="dropdown-menu">
-                    <a href="bet.html">First Project</a>
-                    <a href="home.html">Second Project</a>
-                    <a href="machine002.html">Third Project</a>
+    <head></head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Architecture</title>
+        <base href="" target="_blank">
+    </head>
+    <body>
+        <header>
+            <h5><b>Jamaal</b>Arc</h5>
+            <ul class="nav">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="images">
+                <img src="My Images/sky1.avif" alt="skyscraper">
+                <div class="inner" style="font-size: 2.5rem;"><span class="image-resize" style="background-color: grey;font-weight: bolder;"><b>Jamaal</b></span><span class="image-resize2">Arc</span></div>
+            </div>
+            <div id="projects">
+                <h3>Projects</h3>
+            <div class="projects-grid">
+            <div class="one">
+                <img src="My Images/house1.jpg" alt="House 1">
+                <div class="sex"><span>Mordern Terrace</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house2.jpg" alt="House 2">
+                <div class="sex"><span>Middle Square</span></div>
+            </div>
+            <div class="one">
+                    <img src="My Images/sky1.avif" alt="House 3">
+                    <div class="sex"><span>Para-Modern</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house4.jpg" alt="House 4">
+                <div class="sex"><span>Ultra Apartment</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house5.jpg" alt="House 5">
+                <div class="sex"><span>Modern Villa</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house6.jpg" alt="House 6">
+                <div class="sex"><span>Terrace Cottage</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house7.jpg" alt="House 7">
+                <div class="sex"><span>Modern Loft</span></div>
+            </div>
+            <div class="one">
+                <img src="My Images/house8.jpg" alt="House 8">
+                <div class="sex"><span>Urban Studio</span></div>
+            </div>
+            </div>
+            </div>
+            <div id="about">
+                <h3>About</h3>
+                <p><span>Jamaal Arc is a leading architectural firm specializing in modern and sustainable design solutions. Our team of experienced architects and designers work together to create innovative spaces that blend functionality with aesthetic appeal.</span></p>
+                <div class="about-grid">
+                    <div class="ag">
+                        <img src="My Images/jj1.jpg" alt="Jamaal Smith">
+                        <h3>Jamaal Smith</h3>
+                        <p>Founder & Lead Architect</p>
+                        <p>Jamaal is a world-renowned architect with over 20 years of experience in creating innovative and sustainable designs.</p>
+                        <div class="bb"><a href="#">Contact</a></div>
+                    </div>
+                    <div class="ag">
+                        <img src="My Images/jj3.jpg" alt="Linda Johnson">
+                        <h3>Linda Johnson</h3>
+                        <p>Senior Designer</p>
+                        <p>Linda specializes in modern residential designs, bringing a unique blend of creativity and practicality to every project.</p>
+                        <div class="bb"><a href="#">Contact</a></div>
+                    </div>
+                    <div class="ag">
+                        <img src="My Images/jj4.jpg" alt="Michael Lee">
+                        <h3>Michael Lee</h3>
+                        <p>Project Manager</p>
+                        <p>Michael ensures that all projects are completed on time and within budget, coordinating between clients and the design team.</p>
+                        <div class="bb"><a href="#">Contact</a></div>
+                    </div>
+                    <div class="ag">
+                        <img src="My Images/jj5.jpg" alt="Ayomide Jacobson">
+                        <h3>Ayomide Jacobson</h3>
+                        <p>Team Lead</p>
+                        <p>Ayomide leads the team tactically and make sure everything runs smoothly.She is a leader who inspires her team to achieve excellence.</p>
+                        <div class="bb"><a href="#">Contact</a></div>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </header>
-    <div class="login-menu">
-        <form action="">
-            <h1>Login</h1>
-        <div class="input">
-            <input type="text" placeholder="Username" required>
+            </div>
+            <div id="contact">
+                <h3>Contact</h3>
+                <div class="form">
+                    <form action="">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <label for="email"></label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <label for="subject"></label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="comment"></label>
+                        <input type="text" id="comment" name="comment" placeholder="Comment" required>
+                        <input type="submit" value="SEND MESSAGE">
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="My Images/n6.jpeg" alt="better">
+            </div>
         </div>
-        <div class="input">
-            <input type="password" placeholder="Password" required>
-        </div>
-        <div class="remember">
-            <label><input type="checkbox">Remember me</label>
-            <a href="#">Forgot Password?</a>
-        </div>
-        <button type="submit" class="btn">Login</button>
-        
-        <div class="register-link">
-            <p>Don't have an account? <a href="#">Register</a></p>
-        </div>
-        </form>
-    </div>
-</body>
+    </body>
 </html>
